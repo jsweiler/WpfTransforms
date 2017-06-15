@@ -42,5 +42,6 @@ namespace WpfTransforms
 
             matrixTransform.Matrix = rotateMatrix * scaleMatrix;
         }
+
     }
 }
