@@ -20,9 +20,19 @@ namespace WpfTransforms
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Matrix rotateMatrix = new Matrix();
+        private Matrix scaleMatrix = new Matrix();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            rotateMatrix = new Matrix();
+            rotateMatrix.Rotate(e.NewValue);
+
+            matrixTransform.Matrix = rotateMatrix * scaleMatrix;
         }
     }
 }
