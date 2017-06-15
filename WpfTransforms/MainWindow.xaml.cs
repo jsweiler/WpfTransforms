@@ -34,5 +34,13 @@ namespace WpfTransforms
 
             matrixTransform.Matrix = rotateMatrix * scaleMatrix;
         }
+
+        private void Scale_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            scaleMatrix = new Matrix();
+            scaleMatrix.Scale(e.NewValue, e.NewValue);
+
+            matrixTransform.Matrix = rotateMatrix * scaleMatrix;
+        }
     }
 }

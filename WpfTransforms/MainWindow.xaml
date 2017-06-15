@@ -19,13 +19,17 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Column="1" Fill="Green">
+        <Rectangle Grid.Column="1" Fill="Green" Margin="5"
+                   RenderTransformOrigin=".5 .5">
             <Rectangle.RenderTransform>
                 <MatrixTransform x:Name="matrixTransform"/>
             </Rectangle.RenderTransform>
         </Rectangle>
 
-        <TextBlock Text="Rotate" Grid.Column="0" Grid.Row="1"/>
-        <Slider Maximum="360" Grid.Row="1" Grid.Column="1" ValueChanged="Slider_ValueChanged"/>
+        <TextBlock Text="Rotate" Grid.Column="0" Grid.Row="1" Margin="5"/>
+        <Slider Maximum="360" Grid.Row="1" Grid.Column="1" ValueChanged="Slider_ValueChanged" Margin="5"/>
+
+        <TextBlock Text="Scale" Grid.Column="0" Grid.Row="2" Margin="5"/>
+        <Slider Value="1" Maximum="3" Grid.Column="1" Grid.Row="2" Margin="5" ValueChanged="Scale_ValueChanged"/>
     </Grid>
 </Window>
